@@ -1,0 +1,32 @@
+﻿@model MVC.Models.Pro
+
+<div class="row">
+    <div class="col-md-6  rounded-1 " style="position:relative; top:20vh;left:22vw;min-height:fit-content;color:#00f;background-color:#FFF9;">
+        <form asp-action="Edit">
+            <div class="form-group m-4">
+                <label asp-for="EmployeeId" class="control-label" style="font-weight:900;color:darkcyan"></label>
+                <input asp-for="EmployeeId" class="form-control" readonly autofocus style="border:2px solid #CC3300 ;box-shadow: 1px 2px 2px #CC3300;font-weight:800;color:#CC3300" />
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group m-4">
+                <label asp-for="EmployeeName" class="control-label" style="font-weight:900;color:darkcyan"></label>
+                <input asp-for="EmployeeName" class="form-control" required autofocus style="border:2px solid #0558;box-shadow: 1px 2px 2px #055;font-weight:800;color:#004ccc" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group m-4">
+                <label asp-for="AmountPaid" class="control-label" style="font-weight:900;color:darkcyan"></label>
+                <input asp-for="AmountPaid" class="form-control" required autofocus style="border:2px solid #0558;box-shadow: 1px 2px 2px #055;font-weight:800;color:#004ccc" />
+                <span asp-validation-for="AmountPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group m-4">
+                <label asp-for="EventName" class="control-label" style="font-weight:900;color:darkcyan"></label>
+                <input asp-for="EventName" class="form-control" required autofocus style="border:2px solid #0558;box-shadow: 1px 2px 2px #055;font-weight:800;color:#004ccc" />
+                <span asp-validation-for="EventName" class="text-danger"></span>
+            </div>
+            <div class="form-group text-end">
+                <input type="submit" value="Save" class="btn btn-danger" style="margin: 0 0 2% 0" />
+                <a asp-action="Index" class="btn btn-dark" style="margin: 0 3.2% 2% 1% ">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

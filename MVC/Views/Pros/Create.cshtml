@@ -1,0 +1,33 @@
+﻿@model MVC.Models.Pro
+
+<div class="row">
+    <div class="col-md-6  rounded-1 " style="position:relative; top:26vh;left:22vw;min-height:fit-content;color:#00f;background-color:#fff9;">
+        <form asp-action="Create">
+            <div class="form-group m-4">
+
+                <input asp-for="EmployeeId" class="form-control" placeholder="Employee Id" required autofocus style="border:2px solid #0558;box-shadow: 1px 2px 2px #055;font-weight:800;color:#004ccc" />
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group m-4">
+
+                <input asp-for="EmployeeName" class="form-control" placeholder="Employee Name" required style="border:2px solid #0558;box-shadow: 1px 2px 2px #055;font-weight:800;color:#004ccc" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group m-4">
+
+                <input asp-for="AmountPaid" class="form-control" placeholder="Amount Paid" required style="border:2px solid #0558;box-shadow: 1px 2px 2px #055;font-weight:800;color:#004ccc" />
+                <span asp-validation-for="AmountPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group m-4">
+
+                <input asp-for="EventName" class="form-control" placeholder="Event Name" required style="border:2px solid #0558;box-shadow: 1px 2px 2px #055;;color:#004ccc;font-weight:800" />
+                <span asp-validation-for="EventName" class="text-danger"></span>
+            </div>
+            <div class="form-group text-end">
+
+                <input type="submit" value="Create" class="btn btn-primary" style="margin: 0 0 2% 0" />
+                <a href="@Url.Action("Index", "Pros")" class="btn btn-danger" style="margin: 0 3.2% 2% 1% ">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

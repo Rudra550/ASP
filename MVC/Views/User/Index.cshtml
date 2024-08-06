@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MVC.Models.Userin>
+
+    @{
+        Layout = "_Layout1";
+    }
+<table class="table" id="ut">
+    <thead>
+        <tr>
+            <th>UserId</th>
+            <th>UserName</th>
+            <th>Mobile</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.UserName</td>
+                <td>@user.Mobile</td>
+              
+            </tr>
+        }
+    </tbody>
+</table>
+
+@* <a asp-action="Create" class="btn btn-primary">Create New User</a> *@
+@section Scripts {
+    <!-- Include jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- Initialize DataTables -->
+    <script>
+        $(document).ready(function () {
+            $('#ut').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+
+            });
+        });
+    </script>
+}

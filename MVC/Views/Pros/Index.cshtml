@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MVC.Models.Pro>
+@{
+    Layout = "_Layout1";
+}
+
+
+<!-- Include DataTables CSS in the <head> -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<p>
+    <a asp-action="Create" class="btn  " style="position:fixed;top:9.9vh;left:19vw;color:azure;background:linear-gradient(to right, #055 22%, #FF00FF 78%);border:none;">Create New</a>
+    <a asp-action="Home" class="btn btn-dark " style="position:fixed;top:9.9vh;left:25.1vw;border:none;">Home</a>
+</p>
+<div style="width:80vw;left:19vw;position:fixed;top:16.5vh;">
+    <table id="proTable" class="display table table-striped" style="border-left:4px solid #008080;border-right:2px solid orange;border-bottom:2px solid orange">
+    <thead>
+        <tr>
+            <th style="background-color:teal;color:azure">@Html.DisplayNameFor(model => model.EmployeeId)</th>
+            <th style="background-color:teal;color:azure">@Html.DisplayNameFor(model => model.EmployeeName)</th>
+            <th style="background-color:teal;color:azure">@Html.DisplayNameFor(model => model.AmountPaid)</th>
+            <th style="background-color:teal;color:azure">@Html.DisplayNameFor(model => model.EventName)</th>
+            <th style="background-color:teal;color:azure">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.EmployeeId)</td>
+                <td>@Html.DisplayFor(modelItem => item.EmployeeName)</td>
+                <td>@Html.DisplayFor(modelItem => item.AmountPaid)</td>
+                <td>@Html.DisplayFor(modelItem => item.EventName)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmployeeId" class="btn btn-warning">Edit</a> 
+                    <a asp-action="Delete" asp-route-id="@item.EmployeeId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+@section Scripts {
+    <!-- Include jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- Initialize DataTables -->
+    <script>
+        $(document).ready(function () {
+            $('#proTable').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+
+            });
+        });
+    </script>
+}

@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        #he {
+            font-size: 1.8rem;
+        }
+
+        .material-symbols-rounded {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+
+
+.floating-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: float 15s linear infinite;
+    font-family: Rockwell, sans-serif;
+    font-weight: 600;
+    color: #fff;font-size:1.2rem
+}
+
+.footer-container {
+    color: #fff;
+    background: linear-gradient(to left, #004ccc 22%, #099 78%);
+    height: 3vh; /* Adjusted for better visual consistency */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border: none;
+    z-index: 1;
+}
+
+.footer-text-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+footer {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color:teal;overflow:hidden;">
+            <div class="container-fluid">
+                <span class="text-light" id="he"><big>Event Studio</big></span>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <span class="material-symbols-rounded" onclick="rdc()" style="position:absolute;left:97vw;font-size:2.4rem">manage_accounts</span>
+                    <span class="material-symbols-rounded" id="mas" style="position:absolute;left:94vw;font-size:2.4rem;">domino_mask</span>
+                    <span style="position:absolute;left:87.5vw;font-weight:600;font-size:1.2rem;color:#fff;cursor:pointer;">Contact us</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div style="width:18vw;background-color:#212529;position:fixed;left:0px;height:99vh;border-right:2px solid #04c2;z-index:1001;cursor:pointer;">
+        <div id="ad">
+            <img src="~/css/lx.png" id="ld" />
+            <span style="color:aliceblue;font-size:1.2rem;font-weight:bold;padding-left:10px;">Rudra Naskar [ Admin ]</span>
+        </div>
+        <div class="ev">Dashboard</div>
+        <div class="ev">Upcoming Events</div>
+        <div class="ev" onclick="redirectToProsIndex()">Add Events</div>
+        <div class="ev" onclick="re()">View Events</div>
+    </div>
+
+    <!-- Main View -->
+    <div class="" style="position:fixed;top:7.8vh;left:18vw;background-color:#fff; background-size:cover; background-position:center;overflow:hidden;opacity:.85;width:82vw;height:89.39vh;">
+        <main role="main" class="" style="">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-top footer text-muted" style="position:relative;top:89.1vh">
+        <div class="container-fluid footer-container">
+            <div class="footer-text-wrapper">
+                <div class="floating-text">
+                    W e l c o m e &nbsp;&nbsp; t o &nbsp; &nbsp;E v e n t &nbsp;&nbsp;S t u d i o.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    A l l &nbsp;&nbsp;r i g h t s&nbsp;&nbsp; a r e &nbsp;&nbsp;r e s e r v e d&nbsp;&nbsp; b y &nbsp;&nbsp; F S t u d i o &nbsp;&nbsp;m a d e &nbsp;&nbsp;w i t h &nbsp;&nbsp;&hearts;&nbsp;&nbsp; b y&nbsp;&nbsp; R u d r a.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function redirectToProsIndex() {
+            window.location.href = '@Url.Action("Create", "Pros")';
+        }
+    </script>
+    <script>
+        function rdc() {
+            window.location.href = '@Url.Action("Edit", "User")';
+        }
+    </script>
+    <script>
+        function re() {
+            window.location.href = '@Url.Action("Index", "Pros")';
+        }
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

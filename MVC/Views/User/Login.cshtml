@@ -1,0 +1,44 @@
+﻿@model MVC.Models.LoginViewModel
+
+@{
+    Layout = "Null";
+}
+
+<div class="row">
+    <div class="col-md-3   " style="position:relative; top:27vh;left:36vw;min-height:50vh;background-color:#fffa;border-radius:2.5%;box-shadow:8px 8px 7px #000b">
+        <h2 class="text-center" style="color:#044;font-weight:bold;margin:6% 6% 3% 6%"> Admin Login</h2>
+        <div class="text-center" style="font-weight:600;font-size:1.1rem;padding:0% 6%">Hey, Enter your details to get signed in to your account</div>
+
+        <!-- Form for Login -->
+        <form asp-action="Login" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group" style="margin:6% 5%">
+                <input asp-for="UserId" class="form-control" placeholder="User Id" required autofocus style="border:2px solid #0558;box-shadow: 1px 2px 2px #055;font-weight:800;color:#055" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" style="margin:0% 5%">
+                <input asp-for="Password" type="password" class="form-control" placeholder="Password" required style="border:2px solid #0558;box-shadow: 1px 2px 2px #055;font-weight:800;color:#055" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <!-- Display Validation Summary -->
+            <div>
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn" style="width:21.55vw;position:relative;left:1.2vw;top:3.5vh;background-color:#F60;color:#fff;font-weight:bold;">Login</button>
+            </div>
+        </form>
+
+        <div class="text-center" style="font-weight:400;font-size:1.1rem;padding:10% 6% 0 6%;font-weight:bold">Having trouble signing in?</div>
+
+        <div class="text-center" style="font-weight:400;font-size:1.1rem;padding:3% 6%;font-weight:bold">
+            Don't have an account?
+            <a href="@Url.Action("Create", "User")" style="text-decoration:none;font-weight:bold;color:dodgerblue;">Request now</a>
+        </div>
+    </div>
+    <div class="text-black text-center" style="position:relative;top:30vh;left:-2vw;font-weight:bold">&copy;right eventstudio 2024 | Privacy Policy</div>
+</div>

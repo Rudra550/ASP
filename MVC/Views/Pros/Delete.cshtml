@@ -1,0 +1,40 @@
+﻿@model MVC.Models.Pro
+<div class="col-md-6  rounded-1 border border-dark" style="position:relative; top:26vh;left:22vw;min-height:fit-content;color:#055;background-color:#FFF9;">
+
+<div>
+ 
+    <dl class="row">
+            <dt class="col-sm-4 text-start m-3">
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+            <dd class="col-sm-6 text-start m-3">
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+            <dt class="col-sm-4  text-start m-3">
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+            <dd class="col-sm-6  text-center m-3">
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dd>
+            <dt class="col-sm-4  text-start m-3">
+            @Html.DisplayNameFor(model => model.AmountPaid)
+        </dt>
+            <dd class="col-sm-6  text-center m-3">
+            @Html.DisplayFor(model => model.AmountPaid)
+        </dd>
+            <dt class="col-sm-4 text-start m-3">
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+            <dd class="col-sm-6 text-center m-3">
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+    </dl>
+    </div>
+    <form asp-action="Delete" method="post" class="text-center p-2">
+        <input type="hidden" asp-for="EmployeeId" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+
+

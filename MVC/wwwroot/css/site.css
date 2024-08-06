@@ -1,0 +1,122 @@
+html {
+    font-size: 10px;
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(-180%);
+    }
+
+    100% {
+        transform: translateX(180%);
+    }
+}
+
+.floating-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: float 15s linear infinite;
+    font-family: Rockwell, sans-serif;
+    font-weight: 600;
+    color: #fff;font-size:1.2rem
+}
+
+.footer-container {
+    color: #fff;
+    background: linear-gradient(to left, #004ccc 22%, #099 78%);
+    height: 3vh; /* Adjusted for better visual consistency */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border: none;
+    z-index: 1;
+}
+
+.footer-text-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+footer {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.ev {
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #0005;
+    color: antiquewhite;
+    transition: all 0.3s ease; /* Improved transition for smoother effect */
+    cursor: pointer;
+    font-weight: 100;
+    
+}
+
+    .ev:hover {
+        font-size: 1.5rem;
+        border-left: 4px solid #077;
+        font-weight: 300;
+        background-color: #6666;
+        box-shadow: 0px 8px 4px #0009;
+    }
+#ad {
+    width: 18vw;
+    background-color: #111;
+    height: 10vh;
+    box-shadow:0px 4px 4px #258cfb;
+}
+    #ad:hover{
+        /*font-size:1.4rem;*/
+    }
+#ld {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 20px 0 10px 20px
+}
+    #ld:hover{
+        height:55px;
+        width:55px;
+    }
+
+#proTable th, #proTable tr:nth-child(even) {
+    border-bottom: 3px solid #008080;
+    padding: 8px; /* Optional: Adds padding for better spacing */
+}
+#proTable th, #proTable tr:nth-child(odd) {
+    border-bottom: 1px solid #004ccc; /* Teal border for both header and body cells */
+
+    padding: 8px; /* Optional: Adds padding for better spacing */
+}
+
+#proTable th {
+    background-color: teal; /* Background color for the header */
+    color: azure; /* Text color for the header */
+}
